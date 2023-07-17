@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'debug'
 require_relative './position'
 
 WHITE_STONE = 1
@@ -26,7 +25,7 @@ DIRECTIONS = [
 def output(board)
   puts "  #{ROW.join(' ')}"
   board.each.with_index do |row, i|
-    print COL[i].to_s
+    print COL[i]
     row.each do |cell|
       case cell
       when WHITE_STONE then print ' ○'
