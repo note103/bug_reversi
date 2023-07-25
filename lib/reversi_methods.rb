@@ -86,7 +86,6 @@ def finished?(board)
 end
 
 def placeable?(board, attack_stone_color)
-  position = nil
   board.each.with_index do |cols, col|
     cols.each.with_index do |cell, row|
       next unless cell == BLANK_CELL # 空セルでなければ判定skip
@@ -95,7 +94,7 @@ def placeable?(board, attack_stone_color)
       return true if put_stone!(board, position.to_cellstr, attack_stone_color, false)
     end
   end
-  false if position.nil?
+  false
 end
 
 def count_stone(board, stone_color)
